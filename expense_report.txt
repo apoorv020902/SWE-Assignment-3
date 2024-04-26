@@ -1,0 +1,5 @@
+milk: 10
+eggs: 6
+bread: 8
+pasta: 3
+total: 27

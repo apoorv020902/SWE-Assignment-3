@@ -1,0 +1,7 @@
+milk 5
+eggs 3
+milk 5
+bread 4
+pasta 3
+eggs 3
+bread 4
