@@ -1,27 +1,44 @@
-items_file = open("items.txt", "r")
-expense_file = open("expense_report.txt", "w")
+# Ask the user for their name
+name = input("Enter your name: ")
 
-items = {}
+# Ask the user for the file they want to open
+file_name = input("Enter the name of the file you want to open: ")
 
-for line in items_file:
-    item = line.split()[0]
-    price = int(line.split()[1])
+# Open the input file for reading
+with open(file_name, 'r') as file:
+    # Rest of the code...
+    item_totals = {}
+    # Variable to store the overall total
+    overall_total = 0
 
-    if item in items.keys():
-        old_total = items.get(item)
-        new_total = old_total + price
-        items.update({item:new_total})
-    else:
-        items[item] = price
+    # Read each line in the file
+    for line in file:
+        # Split the line into item and price
+        item, price = line.strip().split()
 
-total = sum(items.values())
+        # Convert the price to a float
+        price = float(price)
 
-for key, value in items.items():
-    expense_file.write("%s: %d\n" % (key, value))
+        # Add the price to the total for the item
+        if item in item_totals:
+            item_totals[item] += price
+        else:
+            item_totals[item] = price
 
-expense_file.write("total: %d" % total)
+        # Add the price to the overall total
+        overall_total += price
+# Ask the user for the file they want to write to
+output_file = input("Enter the name of the file you want to write to: ")
 
-items_file.close()
-expense_file.close()
+# Open the output file for writing
+with open(output_file, 'w') as file:
 
-    
+    # Write the user's name to the output file
+    file.write(f'{name} expense report\n')
+
+    # Write the totals to the output file
+    for item, total in item_totals.items():
+        file.write(f'{item}: {total}\n')
+
+    # Write the overall total to the output file
+    file.write(f'Overall Total: {overall_total}\n')

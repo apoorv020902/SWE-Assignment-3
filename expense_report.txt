@@ -1,5 +1,6 @@
-milk: 10
-eggs: 6
-bread: 8
-pasta: 3
-total: 27
+Gage expense report
+milk: 10.0
+eggs: 6.0
+bread: 8.0
+pasta: 3.0
+Overall Total: 27.0
