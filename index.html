@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Grocery Expense Tracker</h1>
+    <div>
+        <label for="monthInput">Enter Month and Year:</label>
+        <input type="text" id="monthInput" placeholder="e.g., October 2023">
+    </div>
+    <div>
+        <label for="fileInput">Upload Grocery Prices CSV:</label>
+        <input type="file" id="fileInput">
+    </div>
+    <button onclick="generateReport()">Generate Report</button>
+    <h2>Report:</h2>
+    <div id="reportOutput"></div>
+    <script src="script.js"></script>
+</body>
+</html>
